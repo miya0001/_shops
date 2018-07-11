@@ -18,7 +18,7 @@ gulp.task('sass', function () {
 		.pipe(gulp.dest('./src'));
 });
 
-gulp.task('css', ['sass'], function(){
+gulp.task('css', gulp.series( gulp.parallel('sass')), function(){
 	return gulp.src(["src/*.css"])
 		.pipe(concat('style.min.css'))
 		.pipe(minifyCSS())
@@ -26,4 +26,4 @@ gulp.task('css', ['sass'], function(){
 		.pipe(gulp.dest('./css'));
 });
 
-gulp.task('default', ['js', 'css']);
+gulp.task('default', gulp.series( gulp.parallel('js', 'css')));
