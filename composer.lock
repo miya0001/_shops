@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ead30355160e5db5df255a94d8033a00",
+    "content-hash": "5a460220ce17ad9d74619648c5516404",
     "packages": [
         {
             "name": "miya/custom-field",
@@ -40,16 +40,16 @@
         },
         {
             "name": "miya/custom-field-map",
-            "version": "2.2.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/miya0001/custom-field-map.git",
-                "reference": "f6d25c8a9649c411fbfc62881e1e9b42688e54ac"
+                "reference": "61b5c8ec74642c19846c87bdf2c9fd7999769f8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/miya0001/custom-field-map/zipball/f6d25c8a9649c411fbfc62881e1e9b42688e54ac",
-                "reference": "f6d25c8a9649c411fbfc62881e1e9b42688e54ac",
+                "url": "https://api.github.com/repos/miya0001/custom-field-map/zipball/61b5c8ec74642c19846c87bdf2c9fd7999769f8a",
+                "reference": "61b5c8ec74642c19846c87bdf2c9fd7999769f8a",
                 "shasum": ""
             },
             "require": {
@@ -71,12 +71,12 @@
                     "email": "miya0001@users.noreply.github.com"
                 }
             ],
-            "time": "2017-08-30T21:30:50+00:00"
+            "time": "2017-10-04T05:07:16+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,

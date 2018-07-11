@@ -5,8 +5,9 @@
             "_Shops\\": "lib/"
         }
     },
+    "minimum-stability": "dev",
     "require": {
         "miya/custom-field": "^2.3",
-        "miya/custom-field-map": "^2.2"
+        "miya/custom-field-map": "master"
     }
 }
