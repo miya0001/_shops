@@ -1,0 +1,12 @@
+{
+    "name": "miya0001/_shops",
+    "autoload": {
+        "psr-4": {
+            "_Shops\\": "lib/"
+        }
+    },
+    "require": {
+        "miya/custom-field": "^2.3",
+        "miya/custom-field-map": "^2.2"
+    }
+}

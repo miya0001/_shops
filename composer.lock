@@ -1,0 +1,85 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "ead30355160e5db5df255a94d8033a00",
+    "packages": [
+        {
+            "name": "miya/custom-field",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/miya0001/custom-field.git",
+                "reference": "fc8823f400b34dd7fc9da088c36b0516c607749a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/miya0001/custom-field/zipball/fc8823f400b34dd7fc9da088c36b0516c607749a",
+                "reference": "fc8823f400b34dd7fc9da088c36b0516c607749a",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Miya\\WP\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL v2"
+            ],
+            "authors": [
+                {
+                    "name": "Takayuki Miyauchi",
+                    "email": "miya0001@users.noreply.github.com"
+                }
+            ],
+            "time": "2017-09-27T12:22:15+00:00"
+        },
+        {
+            "name": "miya/custom-field-map",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/miya0001/custom-field-map.git",
+                "reference": "f6d25c8a9649c411fbfc62881e1e9b42688e54ac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/miya0001/custom-field-map/zipball/f6d25c8a9649c411fbfc62881e1e9b42688e54ac",
+                "reference": "f6d25c8a9649c411fbfc62881e1e9b42688e54ac",
+                "shasum": ""
+            },
+            "require": {
+                "miya/custom-field": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Miya\\WP\\Custom_Field\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL v2"
+            ],
+            "authors": [
+                {
+                    "name": "Takayuki Miyauchi",
+                    "email": "miya0001@users.noreply.github.com"
+                }
+            ],
+            "time": "2017-08-30T21:30:50+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

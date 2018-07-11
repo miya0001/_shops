@@ -1,0 +1,22 @@
+.shop-meta
+{
+  table-layout: fixed;
+  width: 100%;
+
+  th, td
+  {
+    padding: 3px;
+  }
+
+  th
+  {
+    width: 70px;
+    text-align: left;
+  }
+
+  input
+  {
+    width: 100%;
+  }
+
+}
