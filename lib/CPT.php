@@ -66,5 +66,7 @@ class CPT
 
 		$map = new Map( 'latlng', '位置情報' );
 		$map->add( 'shops' );
+
+		add_image_size( '_shops', 480, 270, true );
 	}
 }
