@@ -31,9 +31,13 @@ class Shop_Meta extends Miya\WP\Custom_Field
 		?>
 		<table class="shop-meta">
 			<tr><th>郵便番号</th><td><input type="text" name="zip" value="<?php $this->_meta( '_zip' ) ?>"></td></tr>
-			<tr><th>住所</th><td><input type="text" name="addr" value="<?php $this->_meta( '_addr' ) ?>"></td></tr>
+			<tr><th>住所</th><td><input type="text" name="address" value="<?php $this->_meta( '_address' ) ?>"></td></tr>
 			<tr><th>電話番号</th><td><input type="text" name="tel" value="<?php $this->_meta( '_tel' ) ?>"></td></tr>
 			<tr><th>URL</th><td><input type="text" name="url" value="<?php $this->_meta( '_url' ) ?>"></td></tr>
+			<tr><th>営業時間</th><td><input type="text" name="open" value="<?php $this->_meta( '_open' ) ?>"></td></tr>
+			<tr><th>定休日</th><td><input type="text" name="holiday" value="<?php $this->_meta( '_holiday' ) ?>"></td></tr>
+			<tr><th>駐車場</th><td><input type="text" name="parking" value="<?php $this->_meta( '_parking' ) ?>"></td></tr>
+            <tr><th>備考</th><td><textarea name="note"><?php echo esc_textarea( get_post_meta( get_the_ID(), '_note', true ) ); ?></textarea></td></tr>
 		</table>
 		<?php
 	}
@@ -45,10 +49,14 @@ class Shop_Meta extends Miya\WP\Custom_Field
 	 */
 	public function save( $post_id )
 	{
-		update_post_meta( $post_id, '_zip', $_POST['zip'] );
-		update_post_meta( $post_id, '_addr', $_POST['addr'] );
-		update_post_meta( $post_id, '_tel', $_POST['tel'] );
-		update_post_meta( $post_id, '_url', $_POST['url'] );
+		$keys = array( 'zip', 'address', 'tel', 'url', 'open', 'holiday', 'parking', 'note' );
+		foreach ( $keys as $key ) {
+		    if ( empty( $_POST[ $key ] ) ) {
+			    update_post_meta( get_the_ID(), '_' . $key, "" );
+            } else {
+			    update_post_meta( get_the_ID(), '_' . $key, $_POST[ $key ] );
+            }
+		}
 	}
 
 	protected function _meta( $key )

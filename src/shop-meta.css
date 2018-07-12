@@ -8,3 +8,6 @@
     text-align: left; }
   .shop-meta input {
     width: 100%; }
+  .shop-meta textarea {
+    width: 100%;
+    height: 5em; }
