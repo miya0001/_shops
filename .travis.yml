@@ -23,9 +23,9 @@ matrix:
   - php: 7.2
     env: WP_VERSION=nightly
   - php: 7.1
-    env: WP_VERSION=nightl
+    env: WP_VERSION=nightly
   - php: 7.0
-    env: WP_VERSION=nightl
+    env: WP_VERSION=nightly
 before_script:
 - npm install
 - npm run build
