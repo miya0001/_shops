@@ -40,7 +40,7 @@ class CPT
 		) );
 
 		register_taxonomy( 'shop-category', array( 'shops' ), array(
-			'hierarchical'      => false,
+			'hierarchical'      => true,
 			'public'            => true,
 			'show_in_nav_menus' => true,
 			'show_ui'           => true,
