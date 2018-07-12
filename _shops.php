@@ -24,7 +24,7 @@ function activate_autoupdate() {
 	$gh_repo = '_shops';       // The repository name of your plugin.
 
 	// Activate automatic update.
-	new Miya\WP\GH_Auto_Updater( $plugin_slug, $gh_user, $gh_repo );
+	new \Miya\WP\GH_Auto_Updater( $plugin_slug, $gh_user, $gh_repo );
 }
 
 register_activation_hook( __FILE__, '\_Shops\activation' );
