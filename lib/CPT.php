@@ -16,13 +16,15 @@ class CPT
 
 	public function __construct()
 	{
-		add_action( 'init', array( $this, 'register_post_type' ) );
+		add_action( 'init', array( $this, 'register_post_type' ), 11 );
 	}
 
 	public function register_post_type()
 	{
+		$label = apply_filters( 'shop_label', 'Shop' );
+
 		register_post_type( 'shops', array(
-			'label'                => "店舗",
+			'label'                 => $label,
 			'public'                => true,
 			'hierarchical'          => false,
 			'show_ui'               => true,
