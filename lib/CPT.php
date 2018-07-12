@@ -21,10 +21,13 @@ class CPT
 
 	public function register_post_type()
 	{
-		$label = apply_filters( 'shop_label', 'Shop' );
+		$cpt = apply_filters( 'shop_post_type', 'shops' );
+		$cpt_label = apply_filters( 'shop_cpt_label', 'Shop' );
+		$tax = apply_filters( 'shop_tax', 'menu' );
+		$tax_label = apply_filters( 'shop_tax_label', 'Category' );
 
-		register_post_type( 'shops', array(
-			'label'                 => $label,
+		register_post_type( $cpt, array(
+			'label'                 => $cpt_label,
 			'public'                => true,
 			'hierarchical'          => false,
 			'show_ui'               => true,
@@ -37,11 +40,11 @@ class CPT
 			'query_var'             => true,
 			'menu_icon'             => 'dashicons-store',
 			'show_in_rest'          => true,
-			'rest_base'             => 'shops',
+			'rest_base'             => $cpt,
 			'rest_controller_class' => 'WP_REST_Posts_Controller',
 		) );
 
-		register_taxonomy( 'shop-category', array( 'shops' ), array(
+		register_taxonomy( $tax, array( $cpt ), array(
 			'hierarchical'      => true,
 			'public'            => true,
 			'show_in_nav_menus' => true,
@@ -57,18 +60,18 @@ class CPT
 				'delete_terms'  => 'edit_posts',
 				'assign_terms'  => 'edit_posts',
 			),
-			'label'             => "カテゴリー",
+			'label'             => $tax_label,
 			'show_in_rest'      => true,
-			'rest_base'         => 'shop-category',
+			'rest_base'         => $tax,
 			'rest_controller_class' => 'WP_REST_Terms_Controller',
 		) );
 
 		$text_field = new Shop_Meta( 'shop-meta', '店舗情報' );
-		$text_field->add( 'shops' );
+		$text_field->add( $cpt );
 
 		$map = new Map( 'latlng', '位置情報' );
-		$map->add( 'shops' );
+		$map->add( $cpt );
 
-		add_image_size( '_shops', 480, 270, true );
+		add_image_size( $cpt . '_images', 480, 270, true );
 	}
 }
