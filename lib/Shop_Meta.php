@@ -37,6 +37,8 @@ class Shop_Meta extends Miya\WP\Custom_Field
 			<tr><th>営業時間</th><td><input type="text" name="open" value="<?php $this->_meta( '_open' ) ?>"></td></tr>
 			<tr><th>定休日</th><td><input type="text" name="holiday" value="<?php $this->_meta( '_holiday' ) ?>"></td></tr>
 			<tr><th>駐車場</th><td><input type="text" name="parking" value="<?php $this->_meta( '_parking' ) ?>"></td></tr>
+			<tr><th>予約</th><td><input type="text" name="reserveation" value="<?php $this->_meta( '_reserveation' ) ?>"></td></tr>
+			<tr><th>人気メニュー</th><td><input type="text" name="popular" value="<?php $this->_meta( '_popular' ) ?>"></td></tr>
             <tr><th>備考</th><td><textarea name="note"><?php echo esc_textarea( get_post_meta( get_the_ID(), '_note', true ) ); ?></textarea></td></tr>
 		</table>
 		<?php
@@ -49,7 +51,7 @@ class Shop_Meta extends Miya\WP\Custom_Field
 	 */
 	public function save( $post_id )
 	{
-		$keys = array( 'zip', 'address', 'tel', 'url', 'open', 'holiday', 'parking', 'note' );
+		$keys = array( 'zip', 'address', 'tel', 'url', 'open', 'holiday', 'parking', 'note', '_reserveation', 'popular' );
 		foreach ( $keys as $key ) {
 		    if ( empty( $_POST[ $key ] ) ) {
 			    update_post_meta( get_the_ID(), '_' . $key, "" );
