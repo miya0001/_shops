@@ -1,13 +1,12 @@
 <?php
 /**
  * Plugin Name:     _shops
- * Plugin URI:      PLUGIN SITE HERE
- * Description:     PLUGIN DESCRIPTION HERE
- * Author:          YOUR NAME HERE
- * Author URI:      YOUR SITE HERE
+ * Plugin URI:      https://github.com/miya0001/_shops
+ * Author:          Takayuki Miyauchi
+ * Author URI:      https://github.com/miya0001/
  * Text Domain:     _shops
  * Domain Path:     /languages
- * Version:         0.1.0
+ * Version:         nightly
  *
  * @package         _shops
  */
