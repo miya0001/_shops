@@ -73,7 +73,8 @@ class Shop_Meta extends Miya\WP\Custom_Field
 	 */
 	public function save( $post_id )
 	{
-		$keys = array( 'zip', 'address', 'tel', 'url', 'open', 'holiday', 'parking', 'note', '_reserveation', 'note' );
+		$keys = array( 'zip', 'address', 'tel', 'url', 'open',
+                    'holiday', 'parking', 'note', '_reserveation', 'note' );
 		foreach ( $keys as $key ) {
 		    if ( empty( $_POST[ $key ] ) ) {
 			    update_post_meta( get_the_ID(), '_' . $key, "" );
