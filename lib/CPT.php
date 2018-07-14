@@ -69,7 +69,7 @@ class CPT
 		$text_field = new Shop_Meta( 'shop-meta', '店舗情報' );
 		$text_field->add( $cpt );
 
-		$map = new Map( 'latlng', '位置情報' );
+		$map = new Map( '_latlng', '位置情報' );
 		$map->add( $cpt );
 
 		add_image_size( $cpt . '_images', 480, 270, true );
