@@ -17,7 +17,7 @@ class Shop_Meta extends Miya\WP\Custom_Field
 		    'open'         => '営業時間',
 		    'holiday'      => '定休日',
 		    'parking'      => '駐車場',
-		    'reserveation' => '予約',
+		    'reservation' => '予約',
 		    'note'         => '備考',
 	    ) );
 
@@ -66,10 +66,12 @@ class Shop_Meta extends Miya\WP\Custom_Field
 			<tr><th><?php $this->label( 'open' ); ?></th><td><input type="text" name="open" value="<?php $this->_meta( '_open' ) ?>"></td></tr>
 			<tr><th><?php $this->label( 'holiday' ); ?></th><td><input type="text" name="holiday" value="<?php $this->_meta( '_holiday' ) ?>"></td></tr>
 			<tr><th><?php $this->label( 'parking' ); ?></th><td><input type="text" name="parking" value="<?php $this->_meta( '_parking' ) ?>"></td></tr>
-			<tr><th><?php $this->label( 'reserveation' ); ?></th><td><input type="text" name="reserveation" value="<?php $this->_meta( '_reserveation' ) ?>"></td></tr>
+			<tr><th><?php $this->label( 'reservation' ); ?></th><td><input type="text" name="reservation" value="<?php $this->_meta( '_reservation' ) ?>"></td></tr>
             <tr><th><?php $this->label( 'note' ); ?></th><td><textarea name="note"><?php echo esc_textarea( get_post_meta( get_the_ID(), '_note', true ) ); ?></textarea></td></tr>
 		</table>
 		<?php
+
+        var_dump( );
 	}
 
 	/**
@@ -80,7 +82,7 @@ class Shop_Meta extends Miya\WP\Custom_Field
 	public function save( $post_id )
 	{
 		$keys = array( 'zip', 'address', 'tel', 'url', 'open',
-                    'holiday', 'parking', 'note', '_reserveation', 'note' );
+                    'holiday', 'parking', 'note', 'reservation', 'note' );
 		foreach ( $keys as $key ) {
 		    if ( empty( $_POST[ $key ] ) ) {
 			    update_post_meta( get_the_ID(), '_' . $key, "" );
