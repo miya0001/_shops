@@ -70,8 +70,6 @@ class Shop_Meta extends Miya\WP\Custom_Field
             <tr><th><?php $this->label( 'note' ); ?></th><td><textarea name="note"><?php echo esc_textarea( get_post_meta( get_the_ID(), '_note', true ) ); ?></textarea></td></tr>
 		</table>
 		<?php
-
-        var_dump( );
 	}
 
 	/**
