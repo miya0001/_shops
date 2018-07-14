@@ -10,6 +10,7 @@ class Shop_Meta extends Miya\WP\Custom_Field
 
     public function __construct( $id, $title, array $options = array() ) {
 	    $this->labels = apply_filters( 'shop_meta_labels', array(
+            'kana'         => 'ふりがな',
 		    'zip'          => '郵便番号',
 		    'address'      => '住所',
 		    'tel'          => '電話番号',
@@ -55,6 +56,7 @@ class Shop_Meta extends Miya\WP\Custom_Field
 		?>
         <h3><?php $this->headings( 'contact' ); ?></h3>
 		<table class="shop-meta">
+            <tr><th><?php $this->label( 'kana' ); ?></th><td><input type="text" name="kana" value="<?php $this->_meta( '_kana' ) ?>"></td></tr>
 			<tr><th><?php $this->label( 'zip' ); ?></th><td><input type="text" name="zip" value="<?php $this->_meta( '_zip' ) ?>"></td></tr>
 			<tr><th><?php $this->label( 'address' ); ?></th><td><input type="text" name="address" value="<?php $this->_meta( '_address' ) ?>"></td></tr>
 			<tr><th><?php $this->label( 'tel' ); ?></th><td><input type="text" name="tel" value="<?php $this->_meta( '_tel' ) ?>"></td></tr>
@@ -79,7 +81,7 @@ class Shop_Meta extends Miya\WP\Custom_Field
 	 */
 	public function save( $post_id )
 	{
-		$keys = array( 'zip', 'address', 'tel', 'url', 'open',
+		$keys = array( 'kana', 'zip', 'address', 'tel', 'url', 'open',
                     'holiday', 'parking', 'note', 'reservation', 'note' );
 		foreach ( $keys as $key ) {
 		    if ( empty( $_POST[ $key ] ) ) {
