@@ -6,6 +6,7 @@ use Miya;
 class Shop_Meta extends Miya\WP\Custom_Field
 {
     protected $labels;
+    protected $headings;
 
     public function __construct( $id, $title, array $options = array() ) {
 	    $this->labels = apply_filters( 'shop_meta_labels', array(
@@ -19,6 +20,11 @@ class Shop_Meta extends Miya\WP\Custom_Field
 		    'reserveation' => '予約',
 		    'note'         => '備考',
 	    ) );
+
+	    $this->headings = apply_filters( 'shop_meta_labels', array(
+            'contact' => '連絡先',
+            'info'    => '営業案内',
+        ) );
 
 	    parent::__construct( $id, $title, $options );
     }
@@ -47,21 +53,21 @@ class Shop_Meta extends Miya\WP\Custom_Field
 	public function form( $post, $args )
 	{
 		?>
-        <h3>連絡先</h3>
+        <h3><?php $this->headings( 'contact' ); ?></h3>
 		<table class="shop-meta">
-			<tr><th><?php label( 'zip' ); ?></th><td><input type="text" name="zip" value="<?php $this->_meta( '_zip' ) ?>"></td></tr>
-			<tr><th><?php label( 'address' ); ?></th><td><input type="text" name="address" value="<?php $this->_meta( '_address' ) ?>"></td></tr>
-			<tr><th><?php label( 'tel' ); ?></th><td><input type="text" name="tel" value="<?php $this->_meta( '_tel' ) ?>"></td></tr>
-			<tr><th><?php label( 'url' ); ?></th><td><input type="text" name="url" value="<?php $this->_meta( '_url' ) ?>"></td></tr>
+			<tr><th><?php $this->label( 'zip' ); ?></th><td><input type="text" name="zip" value="<?php $this->_meta( '_zip' ) ?>"></td></tr>
+			<tr><th><?php $this->label( 'address' ); ?></th><td><input type="text" name="address" value="<?php $this->_meta( '_address' ) ?>"></td></tr>
+			<tr><th><?php $this->label( 'tel' ); ?></th><td><input type="text" name="tel" value="<?php $this->_meta( '_tel' ) ?>"></td></tr>
+			<tr><th><?php $this->label( 'url' ); ?></th><td><input type="text" name="url" value="<?php $this->_meta( '_url' ) ?>"></td></tr>
         </table>
 
-        <h3>営業案内</h3>
+        <h3><?php $this->headings( 'info' ); ?></h3>
         <table class="shop-meta">
-			<tr><th><?php label( 'open' ); ?></th><td><input type="text" name="open" value="<?php $this->_meta( '_open' ) ?>"></td></tr>
-			<tr><th><?php label( 'holiday' ); ?></th><td><input type="text" name="holiday" value="<?php $this->_meta( '_holiday' ) ?>"></td></tr>
-			<tr><th><?php label( 'parking' ); ?></th><td><input type="text" name="parking" value="<?php $this->_meta( '_parking' ) ?>"></td></tr>
-			<tr><th><?php label( 'reserveation' ); ?></th><td><input type="text" name="reserveation" value="<?php $this->_meta( '_reserveation' ) ?>"></td></tr>
-            <tr><th><?php label( 'note' ); ?></th><td><textarea name="note"><?php echo esc_textarea( get_post_meta( get_the_ID(), '_note', true ) ); ?></textarea></td></tr>
+			<tr><th><?php $this->label( 'open' ); ?></th><td><input type="text" name="open" value="<?php $this->_meta( '_open' ) ?>"></td></tr>
+			<tr><th><?php $this->label( 'holiday' ); ?></th><td><input type="text" name="holiday" value="<?php $this->_meta( '_holiday' ) ?>"></td></tr>
+			<tr><th><?php $this->label( 'parking' ); ?></th><td><input type="text" name="parking" value="<?php $this->_meta( '_parking' ) ?>"></td></tr>
+			<tr><th><?php $this->label( 'reserveation' ); ?></th><td><input type="text" name="reserveation" value="<?php $this->_meta( '_reserveation' ) ?>"></td></tr>
+            <tr><th><?php $this->label( 'note' ); ?></th><td><textarea name="note"><?php echo esc_textarea( get_post_meta( get_the_ID(), '_note', true ) ); ?></textarea></td></tr>
 		</table>
 		<?php
 	}
@@ -90,7 +96,12 @@ class Shop_Meta extends Miya\WP\Custom_Field
 	}
 
 	protected function label( $key )
-    {
-        echo esc_html( $this->labels[ $key ] );
-    }
+	{
+		echo esc_html( $this->labels[ $key ] );
+	}
+
+	protected function headings( $key )
+	{
+		echo esc_html( $this->headings[ $key ] );
+	}
 }
