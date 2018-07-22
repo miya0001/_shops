@@ -6,7 +6,7 @@
  * Author URI:      https://github.com/miya0001/
  * Text Domain:     _shops
  * Domain Path:     /languages
- * Version:         0.4.6
+ * Version:         nightly
  *
  * @package         _shops
  */
