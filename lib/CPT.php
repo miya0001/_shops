@@ -46,14 +46,11 @@ class CPT
 
 		register_taxonomy( $tax, array( $cpt ), array(
 			'hierarchical'      => true,
-			'public'            => true,
+			'public'            => false,
 			'show_in_nav_menus' => true,
 			'show_ui'           => true,
 			'show_admin_column' => true,
-			'query_var'         => true,
-			'rewrite'           => array(
-				'with_front' => false,
-			),
+			'query_var'         => false,
 			'capabilities'      => array(
 				'manage_terms'  => 'edit_posts',
 				'edit_terms'    => 'edit_posts',
