@@ -33,7 +33,7 @@ class CPT
 			'show_ui'               => true,
 			'show_in_nav_menus'     => true,
 			'supports'              => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
-			'has_archive'           => true,
+			'has_archive'           => false,
 			'rewrite'               => array(
 				'with_front' => false,
 			),
